@@ -10,9 +10,6 @@ bool Delay_Timer(double Delay)
 	ElapsedMicroseconds.QuadPart = 0;
 	QueryPerformanceFrequency(&Frequency);
 	QueryPerformanceCounter(&StartingTime);
-	ElapsedMicroseconds.QuadPart = 0;
-	QueryPerformanceFrequency(&Frequency);
-	QueryPerformanceCounter(&StartingTime);
 
 	while (ElapsedMicroseconds.QuadPart < Delay)
 	{
@@ -27,7 +24,6 @@ bool Delay_Timer(double Delay)
 			return true;
 		}
 	}
-	return false;
 }
 
 #endif
